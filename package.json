@@ -6,7 +6,12 @@
   "scripts": {
     "test": "standard index.js && echo 'looks ok.'"
   },
-  "keywords": ["webpack", "eslint", "lint", "eshint"],
+  "keywords": [
+    "webpack",
+    "eslint",
+    "lint",
+    "eshint"
+  ],
   "author": "Tim Oxley <secoif@gmail.com>",
   "license": "ISC",
   "devDependencies": {
@@ -23,5 +28,16 @@
     "loader-utils": "^0.2.10",
     "object-assign": "^3.0.0",
     "standard": "^4.5.2"
-  }
+  },
+  "directories": {
+    "example": "example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timoxley/standard-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/timoxley/standard-loader/issues"
+  },
+  "homepage": "https://github.com/timoxley/standard-loader#readme"
 }
