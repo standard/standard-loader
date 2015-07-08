@@ -6,7 +6,7 @@
   "scripts": {
     "test": "standard index.js && echo 'looks ok.'"
   },
-  "keywords": [],
+  "keywords": ["webpack", "eslint", "lint", "eshint"],
   "author": "Tim Oxley <secoif@gmail.com>",
   "license": "ISC",
   "devDependencies": {
