@@ -68,4 +68,4 @@ standard: Use JavaScript Standard Style (https://github.com/feross/standard)
 
 ## Licence
 
-MIT
+ISC
