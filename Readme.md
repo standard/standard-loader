@@ -5,8 +5,6 @@ webpack loader for linting your code with [feross/standard](https://github.com/f
 ## Usage
 
 ```js
-'use strict'
-
 const webpack = require('webpack')
 
 const config = {
