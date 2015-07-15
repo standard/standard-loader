@@ -1,15 +1,15 @@
 'use strict'
 
-const standard = require('standard')
-const format = require('util').format
-const assign = require('object-assign')
-const loaderUtils = require('loader-utils')
+var standard = require('standard')
+var format = require('util').format
+var assign = require('object-assign')
+var loaderUtils = require('loader-utils')
 
 module.exports = function standardLoader (text) {
-  const self = this
-  const callback = this.async()
+  var self = this
+  var callback = this.async()
 
-  const config = assign(
+  var config = assign(
     this.options.standard || {},
     loaderUtils.parseQuery(this.query)
   )
@@ -20,7 +20,7 @@ module.exports = function standardLoader (text) {
     if (err) return callback(err, text)
     if (result.errorCount === 0) return callback(err, text)
 
-    const warnings = result.results.reduce(function (items, result) {
+    var warnings = result.results.reduce(function (items, result) {
       return items.concat(result.messages.map(function (message) {
         return format(
           '%s:%d:%d: %s',
