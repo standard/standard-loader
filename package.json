@@ -1,6 +1,6 @@
 {
   "name": "standard-loader",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "webpack",
   "main": "index.js",
   "scripts": {
