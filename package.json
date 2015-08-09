@@ -15,19 +15,19 @@
   "author": "Tim Oxley <secoif@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^5.6.15",
-    "babel-eslint": "^3.1.23",
-    "babel-loader": "^5.3.1",
+    "babel-core": "^5.8.21",
+    "babel-eslint": "^4.0.5",
+    "babel-loader": "^5.3.2",
     "node-libs-browser": "^0.5.2",
-    "webpack": "^1.10.1"
+    "webpack": "^1.11.0"
   },
   "standard": {
     "parser": "babel-eslint"
   },
   "dependencies": {
-    "loader-utils": "^0.2.10",
+    "loader-utils": "^0.2.11",
     "object-assign": "^3.0.0",
-    "standard": "^4.5.2"
+    "standard": "^5.0.2"
   },
   "directories": {
     "example": "example"
