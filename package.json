@@ -19,7 +19,7 @@
     "babel-eslint": "^4.0.5",
     "babel-loader": "^5.3.2",
     "node-libs-browser": "^0.5.2",
-    "webpack": "^1.11.0"
+    "webpack": "^1.12.9"
   },
   "standard": {
     "parser": "babel-eslint"
