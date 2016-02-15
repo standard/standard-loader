@@ -27,7 +27,7 @@
   "dependencies": {
     "loader-utils": "^0.2.11",
     "object-assign": "^3.0.0",
-    "standard": "^5.0.2"
+    "standard": "^6.0.0"
   },
   "directories": {
     "example": "example"
