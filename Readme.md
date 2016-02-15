@@ -2,13 +2,23 @@
 
 webpack loader for linting your code with [feross/standard](https://github.com/feross/standard)
 
+## Installation
+
+* Use standard-loader@^2.0.0 for standard 5.x
+* Use standard-loader@^3.0.0 for standard 6.x
+
+```
+npm install --save-dev standard-loader
+```
+
 ## Usage
 
 ```js
+// webpack.config.js
 const webpack = require('webpack')
 
 const config = {
-  ...
+  // ...
   module: {
     preLoaders: [
       {
@@ -19,11 +29,11 @@ const config = {
       }
     ],
     loaders: [
-      ...
+      // ...
     ]
   },
   standard: {
-    // config options passed to standard e.g.
+    // config options to be passed through to standard e.g.
     parser: 'babel-eslint'
   }
 }
@@ -39,8 +49,6 @@ module.exports = config
 module.exports = function(a,b) {
     console.log( a, b);
 }
-
-
 
 ```
 
