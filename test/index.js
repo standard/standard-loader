@@ -7,7 +7,7 @@ test('logs error', function (t) {
     t.ifError(err)
     t.ok(stats.compilation.warnings.length, 'has warnings')
     const warning = stats.compilation.warnings[0]
-    warning && t.ok(/semicolon/gm.test(warning.warning), 'has warning about semicolon')
+    t.ok(warning && /semicolon/gm.test(warning.warning), 'has warning about semicolon')
     t.end()
   })
 })
