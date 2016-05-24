@@ -16,12 +16,12 @@
   "author": "Tim Oxley <secoif@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.5.2",
-    "babel-eslint": "^4.1.8",
-    "babel-loader": "^6.2.2",
+    "babel-core": "^6.9.0",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
     "node-libs-browser": "^1.0.0",
-    "tape": "^4.4.0",
-    "webpack": "^1.12.13"
+    "tape": "^4.5.1",
+    "webpack": "^1.13.1"
   },
   "standard": {
     "parser": "babel-eslint"
