@@ -4,8 +4,7 @@ webpack loader for linting your code with [feross/standard](https://github.com/f
 
 ## Installation
 
-* Use standard-loader@^2.0.0 for standard 5.x
-* Use standard-loader@^3.0.0 for standard 6.x
+* Install the desired version of `standard` alongside `standard-loader`.
 
 ```
 npm install --save-dev standard-loader standard
