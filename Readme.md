@@ -8,7 +8,7 @@ webpack loader for linting your code with [feross/standard](https://github.com/f
 * Use standard-loader@^3.0.0 for standard 6.x
 
 ```
-npm install --save-dev standard-loader
+npm install --save-dev standard-loader standard
 ```
 
 ## Usage
