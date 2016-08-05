@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "loader-utils": "^0.2.15",
-    "object-assign": "^4.1.0"
+    "object-assign": "^4.1.0",
+    "snazzy": "^4.0.0"
   },
   "peerDependencies": {
     "standard": "*"

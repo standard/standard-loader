@@ -40,6 +40,31 @@ const config = {
 module.exports = config
 ```
 
+### Disable Snazzy Output
+
+By default, `standard-loader` uses [snazzy](https://www.npmjs.com/package/snazzy) to format output. You can disable snazzy output by setting the `snazzy` configuration query to `false`:
+
+```js
+// webpack.config.js
+const config = {
+  // ...
+  module: {
+    preLoaders: [
+      {
+        // set up standard-loader as a preloader
+        test: /\.jsx?$/,
+        loader: 'standard',
+        exclude: /(node_modules|bower_components)/,
+        query: {
+          snazzy: false // disable snazzy output
+        }
+      }
+    ]
+  }
+  // ...
+}
+```
+
 ### Example Input
 
 ```js
@@ -52,6 +77,7 @@ module.exports = function(a,b) {
 ```
 
 ### Example Output
+
 ```
 > webpack
 Hash: 757e85681387cfef939a
