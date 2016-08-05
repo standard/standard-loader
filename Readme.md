@@ -2,6 +2,8 @@
 
 webpack loader for linting your code with [feross/standard](https://github.com/feross/standard)
 
+[![Build Status](https://travis-ci.org/timoxley/standard-loader.png?branch=master)](https://travis-ci.org/timoxley/standard-loader)
+
 ## Installation
 
 * Install the desired version of `standard` alongside `standard-loader`.
