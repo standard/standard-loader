@@ -35,11 +35,19 @@ module.exports = function standardLoader (text) {
     if (config.snazzy !== false) {
       snazzy({encoding: 'utf8'})
       .on('data', function (data) {
-        self.emitWarning(data)
+        if (config.emitErrors) {
+          self.emitError(data)
+        } else {
+          self.emitWarning(data)
+        }
       })
       .end(warnings)
     } else {
-      self.emitWarning(warnings)
+      if (config.emitErrors) {
+        self.emitError(warnings)
+      } else {
+        self.emitWarning(warnings)
+      }
     }
     callback(err, text)
   })
