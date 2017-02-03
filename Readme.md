@@ -28,7 +28,7 @@ const config = {
       {
         // set up standard-loader as a preloader
         test: /\.jsx?$/,
-        loader: 'standard',
+        loader: 'standard-loader',
         exclude: /(node_modules|bower_components)/
       }
     ],
@@ -58,7 +58,7 @@ const config = {
       {
         // set up standard-loader as a preloader
         test: /\.jsx?$/,
-        loader: 'standard',
+        loader: 'standard-loader',
         exclude: /(node_modules|bower_components)/,
         query: {
           snazzy: false // disable snazzy output
