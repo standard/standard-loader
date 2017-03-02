@@ -17,6 +17,8 @@ npm install --save-dev standard-loader standard
 
 ## Usage
 
+### Webpack 1
+
 ```js
 // webpack.config.js
 const webpack = require('webpack')
@@ -39,6 +41,35 @@ const config = {
   standard: {
     // config options to be passed through to standard e.g.
     parser: 'babel-eslint'
+  }
+}
+
+module.exports = config
+```
+
+### Webpack 2
+
+```js
+// webpack.config.js
+const webpack = require('webpack')
+
+const config = {
+  // ...
+  module: {
+    rules: [
+      {
+        // set up standard-loader as a preloader
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        loader: 'standard-loader',
+        exclude: /(node_modules|bower_components)/,
+        options: {
+          // config options to be passed through to standard e.g.
+          parser: 'babel-eslint'
+        }
+      },
+      // other loaders...
+    ]
   }
 }
 
