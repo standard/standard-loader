@@ -91,6 +91,7 @@ const config = {
         test: /\.jsx?$/,
         loader: 'standard-loader',
         exclude: /(node_modules|bower_components)/,
+        // use options in webpack 2
         query: {
           snazzy: false // disable snazzy output
         }
