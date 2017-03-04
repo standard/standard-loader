@@ -12,15 +12,18 @@ const config = {
   },
 
   module: {
-    preLoaders: [
+    rules: [
       {
         // set up standard-loader as a preloader
         test: /\.jsx?$/,
+        enforce: 'pre',
         loader: path.join(__dirname, '..', '..', 'index.js'),
+        options: {
+          // config options passed to standard e.g.
+          parser: 'babel-eslint'
+        },
         exclude: /(node_modules|bower_components)/
-      }
-    ],
-    loaders: [
+      },
       {
         // ES6 transform
         test: /\.jsx?$/,
@@ -29,11 +32,7 @@ const config = {
           cacheDirectory: true
         }
       }
-    ]
-  },
-  standard: {
-    // config options passed to standard e.g.
-    parser: 'babel-eslint'
+    ],
   }
 }
 

@@ -17,19 +17,19 @@
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.13.0",
-    "babel-eslint": "^6.1.2",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.4",
-    "node-libs-browser": "^1.0.0",
+    "node-libs-browser": "^2.0.0",
     "tape": "^4.6.0",
-    "webpack": "^1.13.1"
+    "webpack": "^2.2.1"
   },
   "standard": {
     "parser": "babel-eslint"
   },
   "dependencies": {
-    "loader-utils": "^0.2.15",
+    "loader-utils": "^1.0.2",
     "object-assign": "^4.1.0",
-    "snazzy": "^4.0.0"
+    "snazzy": "^6.0.0"
   },
   "peerDependencies": {
     "standard": "*"
