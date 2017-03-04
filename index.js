@@ -12,7 +12,7 @@ module.exports = function standardLoader (text) {
 
   var config = assign(
     this.options.standard || {},
-    loaderUtils.parseQuery(this.query)
+    loaderUtils.getOptions(this)
   )
 
   this.cacheable()
