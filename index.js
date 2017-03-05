@@ -5,13 +5,21 @@ var format = require('util').format
 var assign = require('object-assign')
 var loaderUtils = require('loader-utils')
 var snazzy = require('snazzy')
+var pkgConf = require('pkg-conf')
+var multimatch = require('multimatch')
 
 module.exports = function standardLoader (text) {
   var self = this
   var callback = this.async()
+  var loaderOpts = loaderUtils.getLoaderConfig(this, 'standard')
+  var packageOpts = pkgConf.sync('standard', { cwd: loaderOpts.cwd || process.cwd() })
+  var ignoredFile = !!multimatch(this.resourcePath, packageOpts.ignore).length
+
+  if (ignoredFile) return callback(null, text)
 
   var config = assign(
-    this.options.standard || {},
+    packageOpts,
+    loaderOpts,
     loaderUtils.parseQuery(this.query)
   )
 
