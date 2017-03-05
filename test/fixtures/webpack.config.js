@@ -2,6 +2,7 @@ const path = require('path')
 const config = {
   entry: {
     fail: path.join(__dirname, 'fail.js'),
+    ignore: path.join(__dirname, 'ignore.js'),
     pass: path.join(__dirname, 'pass.js')
   },
   output: {

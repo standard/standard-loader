@@ -1,0 +1,7 @@
+{
+  "standard": {
+    "ignore": [
+      "**/ignore.js"
+    ]
+  }
+}
