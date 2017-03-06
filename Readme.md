@@ -19,7 +19,7 @@ npm install --save-dev standard-loader standard
 
 ### Webpack 1
 
-Webpack 1.x is no longer supported as of `standard-loader` version `6.0.0`.  PRs will be accepted for the 5.x branch.
+Webpack 1.x is no longer supported as of `standard-loader` version `6.0.0`.  PRs for Webpack 1.x support will be accepted on the [5.x branch](https://github.com/timoxley/standard-loader/tree/5.x).
 
 ### Webpack 2
 
