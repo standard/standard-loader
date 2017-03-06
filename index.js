@@ -11,6 +11,7 @@ module.exports = function standardLoader (text) {
 
   var config = loaderUtils.getOptions(this)
 
+  config.filename = this.resourcePath
   this.cacheable()
 
   standard.lintText(text, config, function (err, result) {
