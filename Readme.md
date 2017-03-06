@@ -38,9 +38,9 @@ const config = {
         loader: 'standard-loader',
         exclude: /(node_modules|bower_components)/,
         options: {
-          // Emit errors instead of warnings
-          error: true
-          // enable snazzy output (default)
+          // Emit errors instead of warnings (default = false)
+          error: false
+          // enable snazzy output (default = true)
           snazzy: true
           // other config options to be passed through to standard e.g.
           parser: 'babel-eslint'
