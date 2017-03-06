@@ -23,17 +23,9 @@ const config = {
           // config options passed to standard e.g.
           parser: 'babel-eslint'
         }
-      },
-      {
-        // ES6 transform
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        options: {
-          cacheDirectory: true
-        }
       }
     ]
-  },
+  }
 }
 
 module.exports = config
