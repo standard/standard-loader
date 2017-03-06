@@ -20,6 +20,7 @@
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",
     "node-libs-browser": "^1.0.0",
+    "standard": "^9.0.0",
     "tape": "^4.6.0",
     "webpack": "^1.13.1"
   },
