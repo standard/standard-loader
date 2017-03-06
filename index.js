@@ -2,7 +2,6 @@
 
 var standard = require('standard')
 var format = require('util').format
-var assign = require('object-assign')
 var loaderUtils = require('loader-utils')
 var snazzy = require('snazzy')
 
@@ -10,10 +9,7 @@ module.exports = function standardLoader (text) {
   var self = this
   var callback = this.async()
 
-  var config = assign(
-    this.options.standard || {},
-    loaderUtils.getOptions(this)
-  )
+  var config = loaderUtils.getOptions(this)
 
   this.cacheable()
 
