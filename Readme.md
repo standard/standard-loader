@@ -42,7 +42,7 @@ const config = {
     // config options to be passed through to standard e.g.
     parser: 'babel-eslint',
     // Emit errors instead of warnings
-    emitErrors: true
+    error: true
   }
 }
 

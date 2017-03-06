@@ -10,7 +10,6 @@ module.exports = function standardLoader (text) {
   var callback = this.async()
 
   var config = loaderUtils.getOptions(this)
-
   config.filename = this.resourcePath
   this.cacheable()
 
@@ -32,20 +31,18 @@ module.exports = function standardLoader (text) {
     if (config.snazzy !== false) {
       snazzy({encoding: 'utf8'})
       .on('data', function (data) {
-        if (config.emitErrors) {
-          self.emitError(data)
-        } else {
-          self.emitWarning(data)
-        }
+        emit(data)
       })
       .end(warnings)
     } else {
-      if (config.emitErrors) {
-        self.emitError(warnings)
-      } else {
-        self.emitWarning(warnings)
-      }
+      emit(warnings)
     }
+
     callback(err, text)
   })
+
+  function emit (data) {
+    if (config.error) return self.emitError(data)
+    self.emitWarning(data)
+  }
 }

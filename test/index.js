@@ -35,10 +35,17 @@ test('can disable snazzy output', function (t) {
 })
 
 test('logs error', function (t) {
-  config.standard.emitErrors = true
+  var preloader = assign({}, config.module.rules[0], {
+    options: {
+      error: true
+    }
+  })
+
+  config.module.rules[0] = preloader
   webpack(config, function (err, stats) {
     t.ifError(err)
     t.ok(stats.compilation.errors.length, 'has errors')
+    t.ok(!stats.compilation.warnings.length, 'has no warnings')
     const error = stats.compilation.errors[0]
     t.ok(error && /semicolon/gm.test(error.error), 'has error about semicolon')
     t.end()
