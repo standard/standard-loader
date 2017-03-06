@@ -3,6 +3,7 @@
 webpack loader for linting your code with [feross/standard](https://github.com/feross/standard)
 
 [![Build Status](https://travis-ci.org/timoxley/standard-loader.png?branch=master)](https://travis-ci.org/timoxley/standard-loader)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
 
 [![NPM](https://nodei.co/npm/standard-loader.png?downloads=true)](https://nodei.co/npm/standard-loader/)
 [![NPM](https://nodei.co/npm-dl/standard-loader.png?months=3&height=2)](https://nodei.co/npm/standard-loader/)
