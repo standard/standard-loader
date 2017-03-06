@@ -19,35 +19,7 @@ npm install --save-dev standard-loader standard
 
 ### Webpack 1
 
-```js
-// webpack.config.js
-const webpack = require('webpack')
-
-const config = {
-  // ...
-  module: {
-    preLoaders: [
-      {
-        // set up standard-loader as a preloader
-        test: /\.jsx?$/,
-        loader: 'standard-loader',
-        exclude: /(node_modules|bower_components)/
-      }
-    ],
-    loaders: [
-      // ...
-    ]
-  },
-  standard: {
-    // config options to be passed through to standard e.g.
-    parser: 'babel-eslint',
-    // Emit errors instead of warnings
-    error: true
-  }
-}
-
-module.exports = config
-```
+Webpack 1.x is no longer supported as of `standard-loader` version `6.0.0`.  PRs will be accepted for the 5.x branch.
 
 ### Webpack 2
 
@@ -66,7 +38,11 @@ const config = {
         loader: 'standard-loader',
         exclude: /(node_modules|bower_components)/,
         options: {
-          // config options to be passed through to standard e.g.
+          // Emit errors instead of warnings
+          error: true
+          // enable snazzy output (default)
+          snazzy: true
+          // other config options to be passed through to standard e.g.
           parser: 'babel-eslint'
         }
       },
@@ -78,31 +54,6 @@ const config = {
 module.exports = config
 ```
 
-### Disable Snazzy Output
-
-By default, `standard-loader` uses [snazzy](https://www.npmjs.com/package/snazzy) to format output. You can disable snazzy output by setting the `snazzy` configuration query to `false`:
-
-```js
-// webpack.config.js
-const config = {
-  // ...
-  module: {
-    preLoaders: [
-      {
-        // set up standard-loader as a preloader
-        test: /\.jsx?$/,
-        loader: 'standard-loader',
-        exclude: /(node_modules|bower_components)/,
-        // use options in webpack 2
-        query: {
-          snazzy: false // disable snazzy output
-        }
-      }
-    ]
-  }
-  // ...
-}
-```
 
 ### Example Input
 
