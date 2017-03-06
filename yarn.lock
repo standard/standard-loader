@@ -2408,7 +2408,7 @@ standard-json@^1.0.0:
   dependencies:
     concat-stream "^1.5.0"
 
-standard@*:
+standard@*, standard@^9.0.0:
   version "9.0.0"
   resolved "https://registry.yarnpkg.com/standard/-/standard-9.0.0.tgz#58b2acad4dc33823a7477568033c973fc5b6a995"
   dependencies:
