@@ -51,3 +51,16 @@ test('logs error', function (t) {
     t.end()
   })
 })
+
+test('works without options', function (t) {
+  var preloader = assign({}, config.module.rules[0])
+  delete preloader.options
+
+  config.module.rules[0] = preloader
+  webpack(config, function (err, stats) {
+    t.ifError(err)
+    t.ok(stats.compilation.warnings.length, 'has warnings')
+    t.ok(!stats.compilation.errors.length, 'has no errors')
+    t.end()
+  })
+})

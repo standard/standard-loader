@@ -4,12 +4,13 @@ var standard = require('standard')
 var format = require('util').format
 var loaderUtils = require('loader-utils')
 var snazzy = require('snazzy')
+var assign = require('object-assign')
 
 module.exports = function standardLoader (text) {
   var self = this
   var callback = this.async()
 
-  var config = loaderUtils.getOptions(this)
+  var config = assign({}, loaderUtils.getOptions(this))
   config.filename = this.resourcePath
   this.cacheable()
 
