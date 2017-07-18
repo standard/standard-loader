@@ -1,8 +1,8 @@
 # standard-loader
 
-webpack loader for linting your code with [feross/standard](https://github.com/feross/standard)
+webpack loader for linting your code with [JavaScript Standard Style](https://github.com/standard/standard)
 
-[![Build Status](https://travis-ci.org/timoxley/standard-loader.png?branch=master)](https://travis-ci.org/timoxley/standard-loader)
+[![Build Status](https://travis-ci.org/standard/standard-loader.png?branch=master)](https://travis-ci.org/standard/standard-loader)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
 
 [![NPM](https://nodei.co/npm/standard-loader.png?downloads=true)](https://nodei.co/npm/standard-loader/)
