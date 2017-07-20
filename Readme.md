@@ -39,6 +39,8 @@ const config = {
         loader: 'standard-loader',
         exclude: /(node_modules|bower_components)/,
         options: {
+          // custom global variables to declare, e.g., $, jQuery, React, PropTypes
+          globals: [],
           // Emit errors instead of warnings (default = false)
           error: false,
           // enable snazzy output (default = true)
