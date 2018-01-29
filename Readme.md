@@ -1,5 +1,7 @@
 # standard-loader
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/standard/standard-loader.svg)](https://greenkeeper.io/)
+
 webpack loader for linting your code with [JavaScript Standard Style](https://github.com/standard/standard)
 
 [![Build Status](https://travis-ci.org/standard/standard-loader.png?branch=master)](https://travis-ci.org/standard/standard-loader)
