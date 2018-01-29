@@ -17,12 +17,12 @@
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.23.1",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.3.2",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
     "node-libs-browser": "^2.0.0",
-    "standard": "^9.0.0",
+    "standard": "^10.0.3",
     "tape": "^4.6.3",
-    "webpack": "^2.2.1"
+    "webpack": "^3.10.0"
   },
   "standard": {
     "parser": "babel-eslint"
@@ -30,7 +30,7 @@
   "dependencies": {
     "loader-utils": "^1.0.2",
     "object-assign": "^4.1.1",
-    "snazzy": "^6.0.0"
+    "snazzy": "^7.0.0"
   },
   "peerDependencies": {
     "standard": "*"
