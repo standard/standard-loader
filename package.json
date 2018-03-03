@@ -1,7 +1,7 @@
 {
   "name": "standard-loader",
   "version": "6.0.1",
-  "description": "Lint webpack builds with feross/standard.",
+  "description": "Lint webpack builds with standard/standard.",
   "main": "index.js",
   "scripts": {
     "lint": "standard index.js test/index.js && echo 'code looks ok.'",
@@ -42,10 +42,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timoxley/standard-loader.git"
+    "url": "git+https://github.com/standard/standard-loader.git"
   },
   "bugs": {
-    "url": "https://github.com/timoxley/standard-loader/issues"
+    "url": "https://github.com/standard/standard-loader/issues"
   },
-  "homepage": "https://github.com/timoxley/standard-loader#readme"
+  "homepage": "https://github.com/standard/standard-loader#readme"
 }
