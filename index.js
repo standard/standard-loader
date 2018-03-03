@@ -27,16 +27,17 @@ module.exports = function standardLoader (input, map) {
         )
       }))
     }, [])
-    .join('\n')
 
     if (config.snazzy !== false) {
       snazzy({encoding: 'utf8'})
       .on('data', function (data) {
-        emit(data)
+        emit(new StandardJSError(data))
       })
-      .end(warnings)
+      .end(warnings.join('\n'))
     } else {
-      emit(warnings)
+      warnings.forEach(function (warning) {
+        emit(new StandardJSError(warning))
+      })
     }
 
     callback(null, input, map)
@@ -45,5 +46,18 @@ module.exports = function standardLoader (input, map) {
   function emit (data) {
     if (config.error) return webpack.emitError(data)
     webpack.emitWarning(data)
+  }
+}
+
+class StandardJSError extends Error {
+  constructor (messages) {
+    super()
+    this.name = 'StandardJSError'
+    this.message = messages
+    this.stack = ''
+  }
+
+  inspect () {
+    return this.message
   }
 }

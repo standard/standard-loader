@@ -8,9 +8,13 @@ test('logs warning with snazzy', function (t) {
     t.ifError(err)
     t.ok(stats.compilation.warnings.length, 'has warnings')
     t.ok(!stats.compilation.errors.length, 'has no errors')
-    var warning = stats.compilation.warnings[0]
-    t.ok(warning && /semicolon/gm.test(warning.warning), 'has warning about semicolon')
-    t.ok(warning && warning.warning.indexOf('\n\u001b') !== -1, 'uses snazzy output')
+    t.ok(stats.compilation.warnings.some(function (warning) {
+      return /semicolon/gm.test(warning.message)
+    }), 'has warning about semicolon')
+
+    t.ok(stats.compilation.warnings.every(function (warning) {
+      return warning.message.indexOf('\n\u001b') !== -1
+    }), 'uses snazzy output')
     t.end()
   })
 })
@@ -27,9 +31,13 @@ test('can disable snazzy output', function (t) {
     t.ifError(err)
     t.ok(stats.compilation.warnings.length, 'has warnings')
     t.ok(!stats.compilation.errors.length, 'has no errors')
-    var warning = stats.compilation.warnings[0]
-    t.ok(warning && /semicolon/gm.test(warning.warning), 'has warning about semicolon')
-    t.equal(warning.warning.indexOf('\n\u001b'), -1, 'snazzy output disabled')
+    t.ok(stats.compilation.warnings.some(function (warning) {
+      return /semicolon/gm.test(warning.message)
+    }), 'has warning about semicolon')
+
+    t.ok(stats.compilation.warnings.every(function (warning) {
+      return warning.message.indexOf('\n\u001b') === -1
+    }), 'snazzy output disabled')
     t.end()
   })
 })
@@ -46,8 +54,10 @@ test('logs error', function (t) {
     t.ifError(err)
     t.ok(stats.compilation.errors.length, 'has errors')
     t.ok(!stats.compilation.warnings.length, 'has no warnings')
-    const error = stats.compilation.errors[0]
-    t.ok(error && /semicolon/gm.test(error.error), 'has error about semicolon')
+
+    t.ok(stats.compilation.errors.some(function (error) {
+      return /semicolon/gm.test(error.message)
+    }), 'has error about semicolon')
     t.end()
   })
 })
