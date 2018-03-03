@@ -1,39 +1,36 @@
 'use strict'
 
-const webpack = require('webpack')
-
 const config = {
+  mode: 'development',
   context: __dirname,
   entry: {
-    bundle: './index.js',
+    bundle: './index.js'
   },
   output: {
     path: __dirname,
-    filename: 'build.js',
+    filename: 'build.js'
   },
   stats: {
     colors: true,
     reasons: true, // verbose errors
-    chunks: false  // clean summary output
+    chunks: false // clean summary output
   },
   module: {
-    preLoaders: [
-      {test: /\.jsx?$/, loader: '../', exclude: /(node_modules|bower_components)/}
-    ],
-    loaders: [
+    rules: [
       {
-        // Lint ES6 with standard
+        enforce: 'pre',
+        // set up standard-loader as a preloader
         test: /\.jsx?$/,
+        loader: '../',
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader?optional[]=runtime'
+        options: {
+          // config options passed to standard e.g.
+          parser: 'babel-eslint'
+        }
       }
     ]
-  },
-  standard: {
-    // config options passed to standard
-    global: [ "globalVar", "globalVar2" ]
   }
+
 }
 
 module.exports = config
-

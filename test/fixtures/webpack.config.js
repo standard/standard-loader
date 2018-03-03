@@ -17,7 +17,6 @@ const config = {
         enforce: 'pre',
         // set up standard-loader as a preloader
         test: /\.jsx?$/,
-        enforce: 'pre',
         loader: path.join(__dirname, '..', '..', 'index.js'),
         exclude: /(node_modules|bower_components)/,
         options: {
