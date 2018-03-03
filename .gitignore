@@ -1,3 +1,4 @@
 /example/build.js
 node_modules
 test/fixtures/build
+yarn-error.log
