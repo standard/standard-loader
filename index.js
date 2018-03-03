@@ -6,17 +6,17 @@ var loaderUtils = require('loader-utils')
 var snazzy = require('snazzy')
 var assign = require('object-assign')
 
-module.exports = function standardLoader (text) {
-  var self = this
-  var callback = this.async()
+module.exports = function standardLoader (input, map) {
+  var webpack = this
+  var callback = webpack.async()
 
-  var config = assign({}, loaderUtils.getOptions(this))
-  config.filename = this.resourcePath
-  this.cacheable()
+  var config = assign({}, loaderUtils.getOptions(webpack))
+  config.filename = webpack.resourcePath
+  webpack.cacheable()
 
-  standard.lintText(text, config, function (err, result) {
-    if (err) return callback(err, text)
-    if (result.errorCount === 0) return callback(err, text)
+  standard.lintText(input, config, function (err, result) {
+    if (err) return callback(err, input, map)
+    if (result.errorCount === 0) return callback(null, input, map)
 
     var warnings = result.results.reduce(function (items, result) {
       return items.concat(result.messages.map(function (message) {
@@ -39,11 +39,11 @@ module.exports = function standardLoader (text) {
       emit(warnings)
     }
 
-    callback(err, text)
+    callback(null, input, map)
   })
 
   function emit (data) {
-    if (config.error) return self.emitError(data)
-    self.emitWarning(data)
+    if (config.error) return webpack.emitError(data)
+    webpack.emitWarning(data)
   }
 }
