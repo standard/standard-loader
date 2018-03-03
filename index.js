@@ -42,10 +42,10 @@ module.exports = function standardLoader (input, map) {
 
     if (config.snazzy !== false) {
       snazzy({encoding: 'utf8'})
-      .on('data', function (data) {
-        emit(new StandardJSError(data))
-      })
-      .end(warnings.join('\n'))
+        .on('data', function (data) {
+          emit(new StandardJSError(data))
+        })
+        .end(warnings.join('\n'))
     } else {
       warnings.forEach(function (warning) {
         emit(new StandardJSError(warning))

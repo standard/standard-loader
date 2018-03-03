@@ -1,5 +1,6 @@
 const path = require('path')
 const config = {
+  mode: 'development',
   entry: {
     fail: path.join(__dirname, 'fail.js'),
     pass: path.join(__dirname, 'pass.js')

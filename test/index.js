@@ -2,6 +2,7 @@ var test = require('tape')
 var webpack = require('webpack')
 var config = require('./fixtures/webpack.config')
 var assign = require('object-assign')
+var hasAnsi = require('has-ansi')
 
 test('logs warning with snazzy', function (t) {
   webpack(config, function (err, stats) {
@@ -13,7 +14,7 @@ test('logs warning with snazzy', function (t) {
     }), 'has warning about semicolon')
 
     t.ok(stats.compilation.warnings.every(function (warning) {
-      return warning.message.indexOf('\n\u001b') !== -1
+      return hasAnsi(warning.message)
     }), 'uses snazzy output')
     t.end()
   })
@@ -36,7 +37,7 @@ test('can disable snazzy output', function (t) {
     }), 'has warning about semicolon')
 
     t.ok(stats.compilation.warnings.every(function (warning) {
-      return warning.message.indexOf('\n\u001b') === -1
+      return !hasAnsi(warning.message)
     }), 'snazzy output disabled')
     t.end()
   })
