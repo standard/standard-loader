@@ -1,6 +1,6 @@
 'use strict'
 
-var standard = require('standard')
+var Standard = require('standard')
 var format = require('util').format
 var loaderUtils = require('loader-utils')
 var snazzy = require('snazzy')
@@ -9,10 +9,22 @@ var assign = require('object-assign')
 module.exports = function standardLoader (input, map) {
   var webpack = this
   var callback = webpack.async()
+  webpack.cacheable()
 
   var config = assign({}, loaderUtils.getOptions(webpack))
   config.filename = webpack.resourcePath
-  webpack.cacheable()
+  let standard = Standard
+
+  // allow configurable 'standard' e.g. standardx
+  if (config.standard) {
+    if (typeof config.standard === 'string') {
+      standard = require(config.standard)
+    } else {
+      standard = config.standard
+    }
+  }
+
+  delete config.standard
 
   standard.lintText(input, config, function (err, result) {
     if (err) return callback(err, input, map)

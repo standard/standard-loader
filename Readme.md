@@ -18,11 +18,7 @@ npm install --save-dev standard-loader standard
 
 ## Usage
 
-### Webpack 1
-
-Webpack 1.x is no longer supported as of [`standard-loader` version `6.0.0`](https://github.com/timoxley/standard-loader/compare/5.0.0...6.0.0).  PRs for Webpack 1.x support will be accepted on the [5.x branch](https://github.com/timoxley/standard-loader/tree/5.x).
-
-### Webpack 2
+### Webpack 2+
 
 ```js
 // webpack.config.js
@@ -39,11 +35,7 @@ const config = {
         loader: 'standard-loader',
         exclude: /(node_modules|bower_components)/,
         options: {
-          // Emit errors instead of warnings (default = false)
-          error: false,
-          // enable snazzy output (default = true)
-          snazzy: true,
-          // other config options to be passed through to standard e.g.
+          // config options to be passed through to standard e.g.
           parser: 'babel-eslint'
         }
       },
@@ -52,9 +44,26 @@ const config = {
   }
 }
 
-module.exports = config
 ```
 
+### Webpack 1
+
+Webpack 1.x is no longer supported as of [`standard-loader` version `6.0.0`](https://github.com/standard/standard-loader/compare/5.0.0...6.0.0).  PRs for Webpack 1.x support will be accepted on the [5.x branch](https://github.com/standard/standard-loader/tree/5.x).
+
+### Configuration Options
+
+```js
+{
+  // Emit errors instead of warnings (default = false)
+  error: false,
+  // enable snazzy output (default = true)
+  snazzy: true,
+  // configure alternative checker e.g. 'standardx' (default = 'standard')
+  standard: 'standard',
+  // all other config options are passed through to standard e.g.
+  parser: 'babel-eslint'
+}
+```
 
 ### Example Input
 

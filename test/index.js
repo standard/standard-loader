@@ -42,6 +42,48 @@ test('can disable snazzy output', function (t) {
   })
 })
 
+test('can work with standardx', function (t) {
+  var preloader = assign({}, config.module.rules[0], {
+    options: {
+      standard: 'standardx'
+    }
+  })
+
+  const old = config.module.rules[0]
+  config.module.rules[0] = preloader
+  webpack(config, function (err, stats) {
+    t.ifError(err)
+    t.ok(!stats.compilation.errors.length, 'has no errors')
+    t.ok(stats.compilation.warnings.length, 'has some warnings')
+    t.ok(!stats.compilation.warnings.some(function (warning) {
+      return /semicolon/gm.test(warning.message)
+    }), 'has no error about semicolon')
+    t.end()
+  })
+  config.module.rules[0] = old
+})
+
+test('can work with standardx as a module', function (t) {
+  var preloader = assign({}, config.module.rules[0], {
+    options: {
+      standard: require('standardx')
+    }
+  })
+
+  const old = config.module.rules[0]
+  config.module.rules[0] = preloader
+  webpack(config, function (err, stats) {
+    t.ifError(err)
+    t.ok(!stats.compilation.errors.length, 'has no errors')
+    t.ok(stats.compilation.warnings.length, 'has some warnings')
+    t.ok(!stats.compilation.warnings.some(function (warning) {
+      return /semicolon/gm.test(warning.message)
+    }), 'has no error about semicolon')
+    t.end()
+  })
+  config.module.rules[0] = old
+})
+
 test('logs error', function (t) {
   var preloader = assign({}, config.module.rules[0], {
     options: {
