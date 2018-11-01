@@ -1,27 +1,26 @@
 'use strict'
 
-var Standard = require('standard')
 var format = require('util').format
 var loaderUtils = require('loader-utils')
 var snazzy = require('snazzy')
 var assign = require('object-assign')
 
 module.exports = function standardLoader (input, map) {
+  let standard
   var webpack = this
   var callback = webpack.async()
   webpack.cacheable()
 
   var config = assign({}, loaderUtils.getOptions(webpack))
   config.filename = webpack.resourcePath
-  let standard = Standard
 
   // allow configurable 'standard' e.g. standardx
-  if (config.standard) {
-    if (typeof config.standard === 'string') {
-      standard = require(config.standard)
-    } else {
-      standard = config.standard
-    }
+  if (config.standard && typeof config.standard === 'string') {
+    standard = require(config.standard)
+  }
+  // IF standard is not defined after checking config standard, set standard require standard :-)
+  if (standard === undefined) {
+    standard = require('standard')
   }
 
   delete config.standard
