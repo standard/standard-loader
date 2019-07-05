@@ -41,7 +41,7 @@ module.exports = function standardLoader (input, map) {
     }, [])
 
     if (config.snazzy !== false) {
-      snazzy({encoding: 'utf8'})
+      snazzy({ encoding: 'utf8' })
         .on('data', function (data) {
           emit(new StandardJSError(data))
         })
