@@ -18,7 +18,7 @@ npm install --save-dev standard-loader standard
 
 ## Usage
 
-### Webpack 2+
+### webpack 2+
 
 ```js
 // webpack.config.js
@@ -46,9 +46,9 @@ const config = {
 
 ```
 
-### Webpack 1
+### webpack 1
 
-Webpack 1.x is no longer supported as of [`standard-loader` version `6.0.0`](https://github.com/standard/standard-loader/compare/5.0.0...6.0.0).  PRs for Webpack 1.x support will be accepted on the [5.x branch](https://github.com/standard/standard-loader/tree/5.x).
+webpack 1.x is no longer supported as of [`standard-loader` version `6.0.0`](https://github.com/standard/standard-loader/compare/5.0.0...6.0.0).  PRs for webpack 1.x support will be accepted on the [5.x branch](https://github.com/standard/standard-loader/tree/5.x).
 
 ### Configuration Options
 
