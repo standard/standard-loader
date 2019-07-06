@@ -1,5 +1,6 @@
 const path = require('path')
 const config = {
+  mode: 'development',
   entry: {
     fail: path.join(__dirname, 'fail.js'),
     pass: path.join(__dirname, 'pass.js')
@@ -16,7 +17,6 @@ const config = {
         enforce: 'pre',
         // set up standard-loader as a preloader
         test: /\.jsx?$/,
-        enforce: 'pre',
         loader: path.join(__dirname, '..', '..', 'index.js'),
         exclude: /(node_modules|bower_components)/,
         options: {

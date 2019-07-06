@@ -7,13 +7,10 @@ module.exports = function(a,b) {
 
 // Example Output:
 //
-// WARNING in ./index.js
-// standard: Use JavaScript Standard Style (https://github.com/feross/standard)
-//
-// <text>:1:0: Expected space or tab after // in comment.
-// <text>:3:25: Missing space before function parentheses.
-// <text>:3:27: A space is required after ','.
-// <text>:4:2: Expected indentation of 2 characters.
-// <text>:4:15: There should be no spaces inside this paren.
-// <text>:4:23: Extra semicolon.
-// <text>:7:0: Multiple blank lines not allowed.
+// 1:1   error  Expected space or tab after '//' in comment   spaced-comment
+// 3:26  error  Missing space before function parentheses     space-before-function-paren
+// 3:28  error  A space is required after ','                 comma-spacing
+// 4:1   error  Expected indentation of 2 spaces but found 4  indent
+// 4:16  error  There should be no spaces inside this paren   space-in-parens
+// 4:23  error  Extra semicolon                               semi
+// 6:1   error  More than 1 blank line not allowed            no-multiple-empty-lines

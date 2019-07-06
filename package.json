@@ -1,7 +1,7 @@
 {
   "name": "standard-loader",
-  "version": "6.0.1",
-  "description": "Lint webpack builds with feross/standard.",
+  "version": "7.0.0",
+  "description": "Lint webpack builds with standard/standard.",
   "main": "index.js",
   "scripts": {
     "lint": "standard index.js test/index.js && echo 'code looks ok.'",
@@ -16,21 +16,23 @@
   "author": "Tim Oxley <secoif@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.23.1",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.3.2",
-    "node-libs-browser": "^2.0.0",
-    "standard": "^9.0.0",
-    "tape": "^4.6.3",
-    "webpack": "^2.2.1"
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "has-ansi": "^3.0.0",
+    "node-libs-browser": "^2.1.0",
+    "standard": "*",
+    "standardx": "*",
+    "tape": "^4.9.0",
+    "webpack": "^4.0.1"
   },
   "standard": {
     "parser": "babel-eslint"
   },
   "dependencies": {
-    "loader-utils": "^1.0.2",
+    "loader-utils": "^1.1.0",
     "object-assign": "^4.1.1",
-    "snazzy": "^6.0.0"
+    "snazzy": "^8.0.0"
   },
   "peerDependencies": {
     "standard": "*"
@@ -40,10 +42,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/timoxley/standard-loader.git"
+    "url": "git+https://github.com/standard/standard-loader.git"
   },
   "bugs": {
-    "url": "https://github.com/timoxley/standard-loader/issues"
+    "url": "https://github.com/standard/standard-loader/issues"
   },
-  "homepage": "https://github.com/timoxley/standard-loader#readme"
+  "homepage": "https://github.com/standard/standard-loader#readme"
 }
