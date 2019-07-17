@@ -24,7 +24,7 @@
     "standard": "*",
     "standardx": "*",
     "tape": "^4.9.0",
-    "webpack": "^4.0.1"
+    "webpack": "4.35.3"
   },
   "standard": {
     "parser": "babel-eslint"
