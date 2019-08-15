@@ -21,7 +21,7 @@
     "babel-loader": "^8.0.6",
     "has-ansi": "^3.0.0",
     "node-libs-browser": "^2.1.0",
-    "standard": "*",
+    "standard": ">=13.1.0",
     "standardx": "*",
     "tape": "^4.9.0",
     "webpack": "^4.0.1"
