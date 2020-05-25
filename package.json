@@ -23,7 +23,7 @@
     "node-libs-browser": "^2.1.0",
     "standard": "*",
     "standardx": "*",
-    "tape": "^4.9.0",
+    "tape": "^5.0.1",
     "webpack": "^4.0.1"
   },
   "standard": {
