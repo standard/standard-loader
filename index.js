@@ -3,7 +3,7 @@
 var Standard = require('standard')
 var format = require('util').format
 var loaderUtils = require('loader-utils')
-var snazzy = require('snazzy')
+var Snazzy = require('snazzy')
 var assign = require('object-assign')
 
 module.exports = function standardLoader (input, map) {
@@ -41,7 +41,7 @@ module.exports = function standardLoader (input, map) {
     }, [])
 
     if (config.snazzy !== false) {
-      snazzy({ encoding: 'utf8' })
+      new Snazzy({ encoding: 'utf8' })
         .on('data', function (data) {
           emit(new StandardJSError(data))
         })
